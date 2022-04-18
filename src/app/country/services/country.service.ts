@@ -22,8 +22,8 @@ export class CountryService {
     return this.http.get<CountriesResponse[]>(url);
   }
 
-  getPaisCodigo(id: string): Observable<CountriesResponse> {
+  getPaisCodigo(id: string): Observable<CountriesResponse[]> {
     const url = `${this.apiURL}/alpha/${id}`;
-    return this.http.get<CountriesResponse>(url);
+    return this.http.get<CountriesResponse[]>(url);
   }
 }

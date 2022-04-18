@@ -1,1 +1,43 @@
-<p>ver-pais works!</p>
+<div *ngIf="!pais; else divPais" class="alert alert-info">
+  Cargando datos...
+</div>
+
+<ng-template #divPais>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text text-primary text-center">
+        País: <small>{{ pais.name.common }}</small>
+      </h2>
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h3 class="">Bandera:</h3>
+      <img [src]="pais.flags.png" [alt]="pais.flag" width="160" />
+    </div>
+    <div class="col">
+      <h3 class="text text-primary">Información:</h3>
+      <ul class="list-group">
+        <li>
+          Capital: <b>{{ pais.capital }}</b>
+        </li>
+        <li>
+          Región: <b>{{ pais.region }}</b>
+        </li>
+        <li>
+          Area: <b>{{ pais.area | number }}</b>
+        </li>
+        <li>
+          Población: <b>{{ pais.population | number }}</b>
+        </li>
+        <li>
+          Fronteras: <b>{{ pais.borders }}</b>
+        </li>
+        <li>
+          Zona horaria: <b>{{ pais.timezones }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
