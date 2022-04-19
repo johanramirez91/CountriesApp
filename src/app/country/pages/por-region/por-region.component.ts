@@ -27,9 +27,11 @@ export class PorRegionComponent implements OnInit {
   }
 
   buscar(region: string) {
-    this.countryService.buscarRegion(region).subscribe((paises) => {
-      console.log(paises);
-      this.paises = paises;
-    });
+    this.countryService.buscarRegion(region).subscribe(
+      (paises) => {
+        this.paises = paises;
+      },
+      (error) => console.error(error)
+    );
   }
 }
