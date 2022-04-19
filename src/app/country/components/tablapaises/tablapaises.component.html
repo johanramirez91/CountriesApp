@@ -9,7 +9,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let pais of paises; let id = index">
+    <tr
+      *ngFor="let pais of paises; let id = index"
+      class="animate__animated animate__flipInX animate__faster"
+    >
       <td>{{ id + 1 }}</td>
       <td><img [src]="pais.flags.png" [alt]="pais.flag" width="50" /></td>
       <td>{{ pais.name.common }}</td>
