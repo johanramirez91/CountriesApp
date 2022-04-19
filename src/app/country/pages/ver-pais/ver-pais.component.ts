@@ -11,6 +11,7 @@ import { CountriesResponse } from '../../interfaces/country.interface';
 })
 export class VerPaisComponent implements OnInit {
   pais!: CountriesResponse;
+  traducciones: string[] = [];
   constructor(
     private activatedRoute: ActivatedRoute,
     private countryService: CountryService
