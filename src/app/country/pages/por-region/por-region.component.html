@@ -1,23 +1,25 @@
-<h3>
-  Buscar por región: <small>{{ regionActiva | titlecase }}</small>
-</h3>
-<hr />
-<h5>Selecciona la región:</h5>
-<div class="container container-fluid">
-  <div class="row">
-    <div class="col d-flex justify-content-evenly">
-      <button
-        [class]="getStyle(region)"
-        *ngFor="let region of regiones"
-        (click)="activarRegion(region)"
-        (click)="buscar(region)"
-      >
-        {{ region }}
-      </button>
-    </div>
-    <div class="row mt-3">
-      <div class="col">
-        <app-tablapaises [paises]="paises"></app-tablapaises>
+<div class="animate__animated animate__backInRight animate__faster">
+  <h3>
+    Buscar por región: <small>{{ regionActiva | titlecase }}</small>
+  </h3>
+  <hr />
+  <h5>Selecciona la región:</h5>
+  <div class="container container-fluid">
+    <div class="row">
+      <div class="col d-flex justify-content-evenly">
+        <button
+          [class]="getStyle(region)"
+          *ngFor="let region of regiones"
+          (click)="activarRegion(region)"
+          (click)="buscar(region)"
+        >
+          {{ region }}
+        </button>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <app-tablapaises [paises]="paises"></app-tablapaises>
+        </div>
       </div>
     </div>
   </div>
